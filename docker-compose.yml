@@ -12,7 +12,7 @@ services:
     environment:
       - PUID=1024 # The user ID of the current user
       - PGID=100 # The group ID of the current user
-      - TZ=Asia/Jakarta # The Timezone where you live
+      - TZ=Europe/London # The Timezone where you live
       - MYSQL_ROOT_PASSWORD=CHANGE_THIS_PASSWORD # Change this password
       - MYSQL_DATABASE=nextcloud_db
       - MYSQL_USER=nextcloud
@@ -76,19 +76,17 @@ services:
     dns:
       - 127.0.0.1  
     environment:
-      TZ: "Asia/Jakarta"
-      WEBPASSWORD: "" # Blank password - Can be whatever you want.
-      ServerIP: 10.2.0.100 # Internal IP of pihole
-    
-    # Volumes store your data between container upgrades
-    volumes:
+      - TZ=Europe/London
+      - WEBPASSWORD= # Blank password - Can be whatever you want.
+      - ServerIP=10.2.0.100 # Internal IP of pihole
+    volumes: # Volumes store your data between container upgrades
       - "./etc-pihole/:/etc/pihole/"
       - "./etc-dnsmasq.d/:/etc/dnsmasq.d/"
-    # Recommended but not required (DHCP needs NET_ADMIN)
-    #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
     ports:
       - "5353:53/tcp" # This should be for the DNS stuff
       - "8081:80/tcp" # This is for accessing your Pi-Hole admin server (10.2.0.100/admin)
+    # Recommended but not required (DHCP needs NET_ADMIN)
+    # https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
     cap_add:
       - NET_ADMIN
     networks:
