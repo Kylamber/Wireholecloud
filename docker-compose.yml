@@ -45,8 +45,8 @@ services:
     image: weejewel/wg-easy
     container_name: wg-easy
     environment:
-      - WG_HOST=YOUR_PUBLIC_IP # ⚠️ Change this to your public IP
-      - WG_PORT=51820
+      - WG_HOST=YOUR_PUBLIC_IP # ⚠️ Change this to your public IP or server's hostname
+      - WG_PORT=51820 # Forward this port so that it is accessible in different network
       - WG_DEFAULT_DNS=10.2.0.100,10.2.0.100 # The DNS 10.2.0.100 to connect with Pi-Hole
       - PASSWORD=CHANGE_THIS_PASSWORD3 # ⚠️ Change this password to access the web UI
     restart: unless-stopped
