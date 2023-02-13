@@ -14,7 +14,6 @@ Edit the `docker-compose.yml` file and search for "Change This" comments, they a
 docker compose up
 ```
 
-
 Another way to start is just to download `docker-compose.yml`, put it into a folder, modify it, and `docker compose up` it.
 
 ## Usage
@@ -30,9 +29,10 @@ Connect to NextCloud using `localhost:8080` or `10.2.0.4:8080`. To set it up the
 ![image](https://user-images.githubusercontent.com/32596839/218542609-7bfcadd0-f04e-4933-aaf1-5d646c6034a8.png)
 
 ### Pi-Hole
-Connect to Pi-Hole's admin site using `localhost:8081/admin` or `10.2.0.100:8080/admin`.
+Connect to Pi-Hole's admin site using `localhost:5353/admin` or `10.2.0.100:5353/admin`.
 
-![image](https://user-images.githubusercontent.com/32596839/218539172-bcc1439d-f5b8-47c2-9570-ce7be2629c74.png)
+![image](https://user-images.githubusercontent.com/32596839/218546622-f04547f1-6834-4d5b-82d0-d96ac295f306.png)
+
 
 ## Modifications
 If you only want to use the WireGuard Easy and Pi-Hole containers, feel free to delete the mariadb and nextcloud container from `docker-compose.yml`.  
