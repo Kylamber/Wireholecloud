@@ -3,7 +3,7 @@ This is some kind of a fork for the [WireHole](https://github.com/IAmStoxe/wireh
 
 ## Quickstart
 To get started, clone this repo and `docker compose up`.
-```
+```bash
 git clone https://github.com/Kylamber/Wireholecloud.git
 cd Wireholecloud
 docker compose up
